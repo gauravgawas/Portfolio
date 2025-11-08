@@ -367,7 +367,13 @@ export function Home() {
                   <p style={{ color: "#9ca3af", lineHeight: "1.6" }}>
                     {project.desc}
                   </p>
-                  <p style={{ color: "#9ca3af", lineHeight: "1.6" }}>
+                  <p
+                    style={{
+                      color: "#4ca3af",
+                      lineHeight: "1.6",
+                      fontSize: "1rem",
+                    }}
+                  >
                     Click to view the app
                   </p>
                 </div>
