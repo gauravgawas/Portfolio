@@ -2,12 +2,12 @@ import { useState } from "react";
 import { useSwipeable } from "react-swipeable";
 
 const images = [
-  "src/assets/chatimg1.jpeg",
-  "src/assets/chatimg2.jpeg",
-  "src/assets/chatimg3.jpeg",
-  "src/assets/chatimg4.jpeg",
-  "src/assets/chatimg5.jpeg",
-  "src/assets/chatimg6.jpeg",
+  "/assets/chatimg1.jpeg",
+  "/assets/chatimg2.jpeg",
+  "/assets/chatimg3.jpeg",
+  "/assets/chatimg4.jpeg",
+  "/assets/chatimg5.jpeg",
+  "/assets/chatimg6.jpeg",
 ];
 
 export default function ImageSlider() {

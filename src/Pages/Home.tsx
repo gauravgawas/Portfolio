@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import type { CSSProperties } from "react";
-import searchPropLogo from "../assets/Logo.webp";
-import chatLogo from "../assets/chat.png";
+import searchPropLogo from "/assets/Logo.webp";
+import chatLogo from "/assets/chat.png";
 import ImageSlider from "../Components/ImageSlider";
 export function Home() {
   const [scrollY, setScrollY] = useState<number>(0);
