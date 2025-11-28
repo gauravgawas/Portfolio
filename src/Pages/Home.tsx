@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import type { CSSProperties } from "react";
 import searchPropLogo from "../assets/Logo.webp";
+import chatLogo from "../assets/chat.png";
+import ImageSlider from "../Components/ImageSlider";
 export function Home() {
   const [scrollY, setScrollY] = useState<number>(0);
 
@@ -144,6 +146,7 @@ export function Home() {
     name: string;
     desc: string;
     logo?: null | string;
+    link?: string;
   }
 
   const projects: Project[] = [
@@ -151,6 +154,12 @@ export function Home() {
       name: "Search Property",
       desc: "A real-time interactive app that displays available properties with details like price, property type, BHK and other specifications on the map. Users can mark their own properties for sale on the map and use powerful filters to refine results based on price range, property type etc for a more personalized search experience.",
       logo: searchPropLogo,
+      link: "https://searchprop1.onrender.com",
+    },
+    {
+      name: "Ping Me",
+      desc: "A real-time chat app to connect with friends and family",
+      logo: chatLogo,
     },
   ];
 
@@ -347,7 +356,7 @@ export function Home() {
 
           <div style={styles.grid}>
             {projects.map((project) => (
-              <a href="https://searchprop1.onrender.com" target="_blank">
+              <a href={project.link} target="_blank">
                 <div
                   key={project.name}
                   style={styles.projectcard}
@@ -359,23 +368,39 @@ export function Home() {
                       src={project.logo}
                       alt="Logo"
                       style={{
-                        width: "10rem",
-                        height: "10rem",
+                        width: "8rem",
+                        height: "8rem",
                       }}
                     />
                   )}
                   <p style={{ color: "#9ca3af", lineHeight: "1.6" }}>
                     {project.desc}
                   </p>
-                  <p
-                    style={{
-                      color: "#4ca3af",
-                      lineHeight: "1.6",
-                      fontSize: "1rem",
-                    }}
-                  >
-                    Click to view the app
-                  </p>
+
+                  {project.link ? (
+                    <p
+                      style={{
+                        color: "#4ca3af",
+                        lineHeight: "1.6",
+                        fontSize: "1rem",
+                      }}
+                    >
+                      Click to view the app
+                    </p>
+                  ) : (
+                    <>
+                      <ImageSlider />
+                      <p
+                        style={{
+                          color: "#4ca3af",
+                          lineHeight: "1.6",
+                          fontSize: "1rem",
+                        }}
+                      >
+                        Swipe &gt;&gt;
+                      </p>
+                    </>
+                  )}
                 </div>
               </a>
             ))}
